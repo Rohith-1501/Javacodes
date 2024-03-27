@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class ExpandString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the string to expand: ");
+        String s = sc.nextLine();
+        int n = s.length();
+        expandString(s, n);
+    }
+    private static void expandString(String s, int n) {
+        for (int i = 0; i < n; i++) {
+            if (Character.isDigit(s.charAt(i))) {
+                int x = Character.getNumericValue(s.charAt(i));
+                for (int j = 0; j < x; j++) {
+                    System.out.print(s.charAt(i - 1));
+                }
+            } else {
+                continue;
+            }
+        }
+    }
+}
